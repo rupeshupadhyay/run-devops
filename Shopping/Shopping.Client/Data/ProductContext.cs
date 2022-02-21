@@ -41,7 +41,7 @@ namespace Shopping.Client.Data
                 },
                 new Product()
                 {
-                    Name = "HTC U11+ Plus",
+                    Name = "HTC U11+ Plus new",
                     Description = "This phone is the company's biggest change to its flagship smartphone in years. It includes a borderless.",
                     ImageFile = "product-5.png",
                     Price = 380.00M,
