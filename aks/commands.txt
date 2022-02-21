@@ -2,7 +2,36 @@
 --$ProgressPreference = 'SilentlyContinue'; Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile .\AzureCLI.msi; Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'; rm .\AzureCLI.msi
 
 az login
+[
+  {
+    "cloudName": "AzureCloud",
+    "homeTenantId": "3c3aed27-d8f8-4c73-8e55-65bfce26d8ae",
+    "id": "b2b0eb53-4b99-474a-9596-614f6422115a",
+    "isDefault": true,
+    "managedByTenants": [],
+    "name": "Free Trial",
+    "state": "Enabled",
+    "tenantId": "3c3aed27-d8f8-4c73-8e55-65bfce26d8ae",
+    "user": {
+      "name": "upadhyay.rupesh@gmail.com",
+      "type": "user"
+    }
+  }
+]
 az group create --name rkuResourceGroup --location westeurope
+//
+PS C:\Windows\system32> az group create --name rkuResourceGroup --location westeurope
+{
+  "id": "/subscriptions/b2b0eb53-4b99-474a-9596-614f6422115a/resourceGroups/rkuResourceGroup",
+  "location": "westeurope",
+  "managedBy": null,
+  "name": "rkuResourceGroup",
+  "properties": {
+    "provisioningState": "Succeeded"
+  },
+  "tags": null,
+  "type": "Microsoft.Resources/resourceGroups"
+}
 az acr create --resource-group rkuResourceGroup --name shoppingacr --sku basic
 //Admin Credential Enabling
 az acr update -n shoppingacr --admin enabled true
