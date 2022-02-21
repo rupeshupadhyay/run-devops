@@ -72,7 +72,7 @@ namespace Shopping.API.Data
                 },
                 new Product()
                 {
-                    Name = "LG G7 ThinQ",
+                    Name = "LG G7 ThinQ End",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageFile = "product-6.png",
                     Price = 240.00M,
