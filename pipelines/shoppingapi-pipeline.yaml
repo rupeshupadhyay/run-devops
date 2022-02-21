@@ -7,7 +7,7 @@ trigger:
     include:
     - master
   paths:
-    includes:
+    include:
     - Shopping/Shopping.API/*
     - aks/shoppingapi.yaml
 
