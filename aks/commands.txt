@@ -32,6 +32,35 @@ PS C:\Windows\system32> az group create --name rkuResourceGroup --location weste
   "tags": null,
   "type": "Microsoft.Resources/resourceGroups"
 }
-az acr create --resource-group rkuResourceGroup --name shoppingacr --sku basic
+
+az acr create --resource-group rkuResourceGroup --name rkushoppingacr --sku basic
+
 //Admin Credential Enabling
-az acr update -n shoppingacr --admin enabled true
+az acr update -n rkushoppingacr --admin enabled true
+
+//ACR repo list
+az acr repository list --name rkushoppingacr --output table
+
+//ACR login server
+az acr list --resource-group rkuResourceGroup --query "[].{acrLoginServer:loginServer}" --output table
+
+
+//Login to acr
+az acr login --name rkushoppingacr
+
+//Tagging docker images for ACR 
+docker tag shoppingapi:latest rkushoppingacr.azurecr.io/shoppingapi:v1
+
+//Tagging docker images for ACR 
+docker tag shoppingclient:latest rkushoppingacr.azurecr.io/shoppingclient:v1
+
+//Pushing docker images to acr container registory
+docker push rkushoppingacr.azurecr.io/shoppingapi:v1
+docker push rkushoppingacr.azurecr.io/shoppingclient:v1
+
+--Kubernate DEplyomeent 
+
+
+
+//Delete resorce group
+az group delete --name rkuResourceGroup --yes --no-wait
